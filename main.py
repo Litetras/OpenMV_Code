@@ -11,10 +11,10 @@ sensor.set_hmirror(True)                     #上下镜像
 sensor.set_pixformat(sensor.RGB565)          #使用RGB565模式
 sensor.set_framesize(sensor.QQQVGA)          #80*60分辨率
 sensor.skip_frames(time = 2000)              # 跳过2000帧
-clock = time.clock()                         # 跟踪FPS帧率
+clock = time.clock()                         # 返回一个时钟对象
 
 while True:
-    clock.tick()                                                        # 跟踪FPS帧率
+    clock.tick()                                                        # 跟踪FPS帧率，开始追踪运行时间
     img = sensor.snapshot().binary([THRESHOLD])                         # 二值化图像
     line = img.get_regression([(100,100)],roi = ROI, robust = True)     #100,100代表色值max和min
     ROI_L = (0,0,30,50)
