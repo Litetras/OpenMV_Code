@@ -50,7 +50,7 @@ while True:
         if line:
             rho_err = abs(line.rho()) - 47	# 47为小车摄像头正中间
             if line.theta() > 90:
-                theta_err = line.theta() - 180
+                theta_err = line.theta() - 180#为了便于控制小车的运动，我们将角度值减去180度，将其转换为水平方向上的相反角度
             else:
                 theta_err = line.theta()
             img.draw_line(line.line(), color=127)
