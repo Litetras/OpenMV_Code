@@ -4,7 +4,7 @@ from pid import PID
 from pyb import UART,Pin, Timer
 THRESHOLD = (29, 63, 38, 81, 3, 66) # 红线
 uart = UART(3, 115200)  # p4为TX,p5为RX
-rho_pid = PID(p=-20, i=0)   # rho是距离
+rho_pid = PID(p=-20, i=0)   # rho是直线到图像正中心的距离
 theta_pid = PID(p=-0.2, i=0)
 sensor.reset()
 sensor.set_vflip(True)      # 左右镜像
